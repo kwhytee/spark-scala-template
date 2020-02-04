@@ -35,7 +35,7 @@ object Main extends InitSpark {
   }
 
   def setup(spark: SparkSession)= {
-    val data = getData()..map(r => sales(r._1.toString(), r._2.toString(), r._3))
+    val data = getData().map(r => sales(r._1.toString(), r._2.toString(), r._3))
     spark.createDataFrame(data) 
   }
 }
